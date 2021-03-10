@@ -81,10 +81,11 @@
 <script src="../librerias/sweetalert2.all.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
+        
         $('#tablaCategorias').load("categorias/tablaCategoria.php");
 
         $('#btnGuardarCategoria').click(function(){
-            agregarCategoria();
+            agregarCategoria();    
         });
         $('#btnActualizaCategoria').click(function(){
             actualizaCategoria();
@@ -94,6 +95,6 @@
 </script>
 <?php
     }else{
-        header("location: ../index.php");
+        header("location: https://sistemafranco.000webhostapp.com/login");
     }
 ?>

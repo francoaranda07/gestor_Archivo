@@ -81,6 +81,6 @@
 </script>
 <?php
     } else {
-        header("location: ../index.php");
+        header("location: https://sistemafranco.000webhostapp.com/login");
     }
 ?>

@@ -9,7 +9,6 @@ function agregarArchivosGestor() {
         contentType: false,
         processData: false,
         success:function(respuesta){
-            console.log(respuesta);
             respuesta = respuesta.trim();
             if (respuesta == 1) {
                 $('#frmArchivos')[0].reset();
@@ -30,7 +29,6 @@ function agregarArchivosGestor() {
     });
 }
 function aliminarArchivo(idArchivo) {
-    console.log(idArchivo);
     Swal.fire({
         title: '¿Estás seguro(a)?',
         text: "¡No podrás revertir esto!",

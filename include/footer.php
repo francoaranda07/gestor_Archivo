@@ -1,16 +1,19 @@
-        <footer class="py-4 bg-light mt-auto">
-            <div class="container-fluid">
-                <!-- <div class="d-flex align-items-center justify-content-between small">
-                    <div class="text-muted">Copyright &copy; Aranda Franco 2020</div>
-                    <div>
-                        <a href="#">Politica de Privacidad</a>
-                            &middot;
-                        <a href="#">Terminos &amp; Condiciones</a>
-                    </div>
-                </div> -->
-            </div>
-        </footer>
+        
 </div>
+<footer class="py-4 mt-auto">
+<hr>
+<div class="container-fluid">
+    <div class="d-flex align-items-center justify-content-between">
+        <div class="text-muted">
+        </div>
+        <div>Copyright &copy; 2021
+            <a href="https://instagram.com/frann_ea" target="none">Aranda Franco</a>
+                <!-- &middot;
+            <a href="#">Terminos &amp; Condiciones</a> -->
+        </div>
+    </div>
+</div>
+</footer>
         </div>
         <script src="../librerias/jquery-3.5.1.min.js"></script>
         <script src="../librerias/bootstrap.bundle.min.js"></script>

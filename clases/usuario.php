@@ -28,7 +28,7 @@
             }
         }
 
-        public function UsuarioRepetido($usuario){
+        public static function UsuarioRepetido($usuario){
             $conexion = Conectar::conexion();
 
             $sql = "SELECT usuario FROM t_usuarios WHERE usuario = '$usuario'";

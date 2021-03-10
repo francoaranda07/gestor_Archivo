@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registro</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="shortcut icon" href="img/icono.png" type="image/jpg"><!--Para colocar el icono de la pag-->
     <link rel="stylesheet" href="librerias/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="librerias/jquery-ui-1.12.1/jquery-ui.theme.css">
     <link rel="stylesheet" href="librerias/jquery-ui-1.12.1/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("a[title|='Hosted on free web hosting 000webhost.com. Host your own website for       FREE.']").css("display", "none");
+        $("img[alt|='www.000webhost.com']").css("display", "none");
+        });
+    </script>
 </head>
 <body>
     <div class="wrapper fadeInDown">
@@ -42,7 +50,7 @@
 
             <!-- Remind Passowrd -->
             <div id="formFooter">
-            <a class="underlineHover" href="index.php">Inicia Sesión</a>
+            <a class="underlineHover" href="https://sistemafranco.000webhostapp.com">Inicia Sesión</a>
             </div>
 
         </div>
@@ -79,9 +87,9 @@
                             text: 'Presiona OK para Inciar Sesión',
                             type: 'success'
                         })
-                        .then($resultado =>{ //y despues lo redireccione a index.php
+                        .then($resultado =>{ //y despues lo redireccione a login.php
                             if($resultado.value){
-                                window.location.href = 'index.php';
+                                window.location.href = 'https://sistemafranco.000webhostapp.com/login';
                             }
                         });
                     }else if( respuesta == 2){
