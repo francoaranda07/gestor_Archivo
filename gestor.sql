@@ -41,14 +41,7 @@ CREATE TABLE `t_archivos` (
 -- Volcado de datos para la tabla `t_archivos`
 --
 
-INSERT INTO `t_archivos` (`id_archivo`, `id_usuario`, `id_categoria`, `nombre`, `tipo`, `ruta`, `fecha`) VALUES
-(4, 52, 5, 'wallpaperflare.com_wallpaper.jpg', 'jpg', '../../archivos/52/wallpaperflare.com_wallpaper.jpg', '2021-02-06 00:45:36'),
-(5, 52, 8, 'evi1.PNG', 'PNG', '../../archivos/52/evi1.PNG', '2021-02-06 00:47:39'),
-(7, 52, 5, 'PO PA  - RKT - MAMBO DJ .mp3', 'mp3', '../../archivos/52/PO PA  - RKT - MAMBO DJ .mp3', '2021-02-07 19:38:47'),
-(8, 52, 5, 'Por Fase 3, CDMX aplicará Hoy No Circula para todos los autos a partir del 23 de Abril..mp4', 'mp4', '../../archivos/52/Por Fase 3, CDMX aplicará Hoy No Circula para todos los autos a partir del 23 de Abril..mp4', '2021-02-07 19:39:04'),
-(9, 52, 5, '515731204.pdf', 'pdf', '../../archivos/52/515731204.pdf', '2021-02-07 19:39:30');
-
--- --------------------------------------------------------
+------------------------------------
 
 --
 -- Estructura de tabla para la tabla `t_categorias`
