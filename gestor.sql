@@ -58,15 +58,7 @@ CREATE TABLE `t_categorias` (
 -- Volcado de datos para la tabla `t_categorias`
 --
 
-INSERT INTO `t_categorias` (`id_categoria`, `id_usuario`, `nombre`, `fechaInsert`) VALUES
-(5, 52, 'Películas', '2021-02-03 22:36:17'),
-(8, 52, 'Trabajo', '2021-02-04 01:17:33'),
-(9, 52, 'Videos', '2021-02-04 11:36:49'),
-(10, 53, 'Colección', '2021-02-04 11:38:26'),
-(11, 53, 'Laburo', '2021-02-04 11:39:07'),
-(12, 52, 'Casa', '2021-02-07 19:48:56');
-
--- --------------------------------------------------------
+------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `t_usuarios`
@@ -85,9 +77,6 @@ CREATE TABLE `t_usuarios` (
 -- Volcado de datos para la tabla `t_usuarios`
 --
 
-INSERT INTO `t_usuarios` (`id_usuario`, `nombre`, `fechaNacimiento`, `email`, `usuario`, `password`) VALUES
-(52, 'Franco', '2000-07-07', 'franco@gmail.com', 'kali', '8cb2237d0679ca88db6464eac60da96345513964'),
-(53, 'Franco', '2021-02-03', 'frann@gmail.com', 'Franco', '8cb2237d0679ca88db6464eac60da96345513964');
 
 --
 -- Índices para tablas volcadas
