@@ -11,6 +11,7 @@
                 archivos.nombre as nombreArchivo,
                 archivos.tipo as tipoArchivo,
                 archivos.ruta as rutaArchivo,
+                archivos.publico as publicoArchivo,
                 archivos.fecha as fecha
             FROM 
                 t_archivos AS archivos
@@ -36,6 +37,7 @@
                         <th>Descargar</th>
                         <th>Visualizar</th>
                         <th>Eliminar</th>
+                        <th>Público</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,6 +47,7 @@
                         $rutaDescarga = "../archivos/".$idUsuario."/".$mostrar['nombreArchivo'];
                         $nombreArchivo = $mostrar['nombreArchivo'];
                         $idArchivo = $mostrar['idArchivo'];
+                        $publicoArchivo = $mostrar['publicoArchivo'];
                 ?>
                     <tr style="text-align: center;">
                         <td><?php echo $mostrar['categoria']; ?></td>
@@ -75,17 +78,38 @@
                                 <i class="fas fa-trash-alt"></i>
                             </span>
                         </td>
+                        <td style="text-align: center;">
+                            <?php if ($mostrar['publicoArchivo']==='0'){ ?>
+                                <span class="btn btn-secondary btn-sm" onclick="archivoPublico(<?php echo $idArchivo?>)">
+                                    <i class="fas fa-check-circle"></i>
+                                </span>
+                            <?php
+                            
+                            }else 
+                                if ($mostrar['publicoArchivo']==='1'){?>
+                                    <span class="btn btn-success btn-sm" onclick="quitararchivoPublico(<?php echo $idArchivo?>)">
+                                        <i class="fas fa-check-circle"></i>
+                                    </span>
+                            <?php
+                                }
+                            ?>
+                        </td>
                     </tr>
                 <?php
                     }
                 ?>
                 </tbody>
+                
             </table>
         </div>
     </div>
 </div>
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#tablaGestorDatatable').DataTable();
+        $('#tablaGestorDatatable').DataTable({ 
+            "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
+            }
+        });
     });
 </script>

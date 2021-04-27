@@ -2,5 +2,5 @@
     session_start();
     session_destroy();
 
-    header("location:https://sistemafranco.000webhostapp.com");
+    header("location:https://minubecilla.com");
 ?>

@@ -9,8 +9,9 @@
                                             id_categoria, 
                                             nombre, 
                                             tipo, 
-                                            ruta) 
-                            VALUES (?, ?, ?, ?, ?)";
+                                            ruta,
+                                            publico) 
+                            VALUES (?, ?, ?, ?, ?, 0)";
             $query = $conexion->prepare($sql);
             $query->bind_param("iisss", $datos['idUsuario'], 
                                         $datos['idCategoria'], 
@@ -48,6 +49,24 @@
             $nombreArchivo = $datos['nombre'];
             $extension = $datos['tipo'];
             return self::tipoArchivo($nombreArchivo, $extension);
+        }
+        
+        public function publicarArchivo($idArchivo){
+            $conexion = Conectar::conexion();
+            $sql = "UPDATE t_archivos SET publico = '1' WHERE id_archivo = '$idArchivo'";
+            $query = $conexion->prepare($sql);
+            $respuesta = $query->execute();
+            $query->close();
+            return $respuesta;
+        }
+
+        public function desPublicarArchivo($idArchivo){
+            $conexion = Conectar::conexion();
+            $sql = "UPDATE t_archivos SET publico = '0' WHERE id_archivo = '$idArchivo'";
+            $query = $conexion->prepare($sql);
+            $respuesta = $query->execute();
+            $query->close();
+            return $respuesta;
         }
 
         public static function tipoArchivo($nombre, $extension) {

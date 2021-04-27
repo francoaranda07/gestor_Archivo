@@ -17,6 +17,7 @@
                                             password) 
                                             VALUES (?, ?, ?, ?, ?)";
                 $query = $conexion->prepare($sql);
+
                 $query->bind_param('sssss', $datos['nombre'], 
                                             $datos['fechaNacimiento'], 
                                             $datos['email'], 

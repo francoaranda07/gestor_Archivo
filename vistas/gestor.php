@@ -46,7 +46,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal visualizar -->
 <div class="modal fade" id="visualizarArchivo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -72,7 +72,6 @@
     $(document).ready(function(){
         $('#tablaGestorArchivos').load("gestor/tablaGestor.php");
         $('#categoriasLoad').load("categorias/selectCategorias.php");
-
         $('#btnGuardarArchivos').click(function(){
             agregarArchivosGestor();
         });
@@ -81,6 +80,6 @@
 </script>
 <?php
     } else {
-        header("location: https://sistemafranco.000webhostapp.com/login");
+        header("location: https://minubecilla.com/login");
     }
 ?>

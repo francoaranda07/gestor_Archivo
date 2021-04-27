@@ -3,17 +3,10 @@
 <head>
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Ingreso</title>
     <link rel="shortcut icon" href="img/icono.png" type="image/jpg"><!--Para colocar el icono de la pag-->
     <link rel="stylesheet" href="librerias/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/login.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-        $("a[title|='Hosted on free web hosting 000webhost.com. Host your own website for       FREE.']").css("display", "none");
-        $("img[alt|='www.000webhost.com']").css("display", "none");
-        });
-    </script>
 </head>
 <body>
     <div class="wrapper fadeInDown">
@@ -23,7 +16,7 @@
             <!-- Icon -->
             <div class="fadeIn first">
             <img src="img/icono.png" id="icon" alt="User Icon" />
-            <h1>Gestor de Archivos</h1>
+            <h1>Mi Nubecilla</h1>
             </div>
             <!-- Login Form -->
             <form id="frmLogin" method="post" onsubmit=" return logear() ">
@@ -57,7 +50,7 @@
                         })
                         .then($resultado =>{ //y despues lo redireccione a inicio.php
                             if($resultado.value){
-                                window.location.href = 'https://sistemafranco.000webhostapp.com/vistas/inicio';
+                                window.location.href = 'https://minubecilla.com/vistas/inicio';
                             }
                         });
                     }else{
