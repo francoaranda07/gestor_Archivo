@@ -51,7 +51,7 @@
             return self::tipoArchivo($nombreArchivo, $extension);
         }
         
-        public function publicarArchivo($idArchivo){
+        public function publicarArchivo($idArchivo){ //Volver publico un archivo
             $conexion = Conectar::conexion();
             $sql = "UPDATE t_archivos SET publico = '1' WHERE id_archivo = '$idArchivo'";
             $query = $conexion->prepare($sql);
@@ -60,7 +60,7 @@
             return $respuesta;
         }
 
-        public function desPublicarArchivo($idArchivo){
+        public function desPublicarArchivo($idArchivo){ //Quitar publico a un archivo
             $conexion = Conectar::conexion();
             $sql = "UPDATE t_archivos SET publico = '0' WHERE id_archivo = '$idArchivo'";
             $query = $conexion->prepare($sql);

@@ -15,23 +15,25 @@
 
             <!-- Icon -->
             <div class="fadeIn first">
-            <img src="img/icono.png" id="icon" alt="User Icon" />
-            <h1>Mi Nubecilla</h1>
+                <img src="img/icono.png" id="icon" alt="User Icon" />
+                <h1>Mi Nubecilla</h1>
             </div>
             <!-- Login Form -->
             <form id="frmLogin" method="post" onsubmit=" return logear() ">
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario">
-            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-            <input type="submit" class="fadeIn fourth" value="Iniciar">
+                <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario">
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
+                <input type="submit" class="fadeIn fourth" value="Iniciar">
             </form>
 
             <!-- Remind Passowrd -->
             <div id="formFooter">
-                <a class="underlineHover" href="registro">Registrarse</a>
+                <a class="underlineHover" href="register">Registrarse</a>
             </div>
 
         </div>
+        
     </div>
+    
     <script src="librerias/jquery-3.5.1.min.js"></script>
     <script src="librerias/sweetalert2.all.min.js"></script>
     <script type="text/javascript">
@@ -50,7 +52,7 @@
                         })
                         .then($resultado =>{ //y despues lo redireccione a inicio.php
                             if($resultado.value){
-                                window.location.href = 'https://minubecilla.com/vistas/inicio';
+                                window.location.href = 'vistas/inicio';
                             }
                         });
                     }else{

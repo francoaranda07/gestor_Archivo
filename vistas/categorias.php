@@ -1,6 +1,8 @@
 <?php 
     session_start();
+    
     if (isset($_SESSION['usuario'])){
+        $nombre = $_SESSION['usuario'];
         include "../include/navegacion.php"; 
 ?>
 <div id="layoutSidenav_content">
@@ -95,6 +97,6 @@
 </script>
 <?php
     }else{
-        header("location: https://sistemafranco.000webhostapp.com/login");
+        header("location: ../login");
     }
 ?>

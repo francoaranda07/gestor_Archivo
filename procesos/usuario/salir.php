@@ -2,5 +2,6 @@
     session_start();
     session_destroy();
 
-    header("location:https://minubecilla.com");
+    header("location:../../login");
+    
 ?>

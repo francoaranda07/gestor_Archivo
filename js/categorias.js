@@ -22,7 +22,13 @@ function agregarCategoria() {
                         title: '¡Correcto!',
                         text: '¡Se agregó con éxito!'
                     })
-                } else {
+                } else if ( respuesta == 2){
+                    swal({
+                        title: '¡Advertencia!',
+                        text: 'Esa categoría ya existe, por favor ingresa otra.',
+                        type: 'info'
+                    });
+                }else{
                     Swal.fire({
                         type: 'error',
                         title: '¡Hubo un error!',

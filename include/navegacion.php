@@ -11,13 +11,9 @@
         <link href="../css/styles.css" rel="stylesheet" />
         <link href="../librerias/dataTables.bootstrap4.min.css">
     </head>
-    <?php
-        session_start();
-        $nombre = $_SESSION['usuario'];
-    ?>
     <body class="sb-nav-fixed" style="background: #e9ecef;">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="https://minubecilla.com/vistas/inicio">
+            <a class="navbar-brand" href="../vistas/inicio">
                 <img src="../img/icono.png" alt="gestor" width="50px" class="ml-5">
             </a>
             <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
@@ -28,9 +24,8 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <!-- <a class="dropdown-item" href="#">Configuración</a> -->
                         <!-- <div class="dropdown-divider"></div> -->
-                        <a class="dropdown-item" href=""><i class="fas fa-user fa-fw"></i> Perfil</a>
+                        <!-- <a class="dropdown-item" href=""><i class="fas fa-user fa-fw"></i> Perfil</a> -->
                         <a class="dropdown-item" href="../procesos/usuario/salir"><i class="fas fa-sign-out-alt"></i> Salir de <?php echo $nombre ?></a>
-                        
                     </div>
                 </li>
             </ul>
@@ -40,11 +35,11 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <a class="nav-link" href="https://minubecilla.com/vistas/inicio">
+                            <a class="nav-link" href="../vistas/inicio">
                                 <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                                 Inicio
                             </a>
-                            <a class="nav-link" href="https://minubecilla.com/vistas/categorias.php">
+                            <a class="nav-link" href="../vistas/categorias.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-clipboard"></i></div>
                                 Categorías
                             </a>

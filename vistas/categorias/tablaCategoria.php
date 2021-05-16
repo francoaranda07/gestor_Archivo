@@ -21,6 +21,7 @@
         <?php
             $sql = "SELECT id_categoria, nombre, fechaInsert FROM t_categorias WHERE id_usuario = '$idUsuario'";
             $result = mysqli_query($conexion, $sql);
+            
             while ($mostrar = mysqli_fetch_array($result)){
                 $idCategoria = $mostrar['id_categoria'];
         ?>
@@ -38,9 +39,11 @@
                     </span>
                 </td>
             </tr>
+            <div></div>
             <?php
                 }
             ?>
+            </div>
         </tbody>
     </table>
 </div>

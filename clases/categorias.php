@@ -2,18 +2,38 @@
 
     require_once "conexion.php";
     class Categorias extends Conectar{
+
         public function agregarCategoria($datos) {
             $conexion = Conectar::conexion();
 
-            $sql = "INSERT INTO t_categorias (id_usuario, nombre) VALUES (?,?)";
-            $query = $conexion->prepare($sql);
-            $query->bind_param("is", $datos['idUsuario'], $datos['categoria']);
+            if (self::categoriaRepetida($datos['categoria'])){
+                return 2;
+            }else{
+                $sql = "INSERT INTO t_categorias (id_usuario, nombre) VALUES (?,?)";
+                $query = $conexion->prepare($sql);
+                $query->bind_param("is", $datos['idUsuario'], $datos['categoria']);
 
-            $respuesta = $query->execute();
-            $query->close();
+                $respuesta = $query->execute();
+                $query->close();
 
-            return $respuesta;
+                return $respuesta;
+            }
         }
+        public static function categoriaRepetida($categoria){
+            $conexion = Conectar::conexion();
+
+            $sql = "SELECT nombre FROM t_categorias WHERE nombre = '$categoria'";
+            $result = mysqli_query($conexion, $sql);
+            $datos = mysqli_fetch_array($result);
+
+            if ($datos['categoria'] != "" || $datos['categoria'] == $categoria) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+
         public function eliminarCategorias($idCategoria) {
             $conexion = Conectar::conexion();
 

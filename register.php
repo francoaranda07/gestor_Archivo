@@ -43,7 +43,7 @@
 
             <!-- Remind Passowrd -->
             <div id="formFooter">
-            <a class="underlineHover" href="https://minubecilla.com">Inicia Sesión</a>
+                <a class="underlineHover" href="login">Inicia Sesión</a>
             </div>
 
         </div>
@@ -82,7 +82,7 @@
                         })
                         .then($resultado =>{ //y despues lo redireccione a login.php
                             if($resultado.value){
-                                window.location.href = 'https://minubecilla.com/login';
+                                window.location.href = 'login';
                             }
                         });
                     }else if( respuesta == 2){

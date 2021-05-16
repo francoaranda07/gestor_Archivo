@@ -65,8 +65,8 @@ function aliminarArchivo(idArchivo) {
         }
     })
 }
-function archivoPublico(idArchivo){
-    console.log(idArchivo);
+function archivoPublico(idArchivo){//volver publico a un archivo
+    //console.log(idArchivo);
     Swal.fire({
         title: '¿Estás seguro(a)?',
         text: "¿Deseas volver PÚBLICO este archivo?",
@@ -104,8 +104,8 @@ function archivoPublico(idArchivo){
     })
 }
 
-function quitararchivoPublico(idArchivo){
-    console.log(idArchivo);
+function quitararchivoPublico(idArchivo){ //quitar volver publico a un archivo
+    //console.log(idArchivo);
     $.ajax({
         type: "POST",
         data:'idArchivo=' + idArchivo,
