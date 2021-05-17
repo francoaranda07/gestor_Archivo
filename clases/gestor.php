@@ -42,7 +42,6 @@
 
         public function obtenerRutaArchivo($idArchivo) {
             $conexion = Conectar::conexion();
-
             $sql = "SELECT nombre, tipo FROM t_archivos WHERE id_archivo = '$idArchivo'";
             $result = mysqli_query($conexion, $sql);
             $datos = mysqli_fetch_array($result);
@@ -53,6 +52,8 @@
         
         public function publicarArchivo($idArchivo){ //Volver publico un archivo
             $conexion = Conectar::conexion();
+            $idUsuario = $_SESSION['idUsuario'];
+            self::colocarArchiPublic($idArchivo, $idUsuario);
             $sql = "UPDATE t_archivos SET publico = '1' WHERE id_archivo = '$idArchivo'";
             $query = $conexion->prepare($sql);
             $respuesta = $query->execute();
@@ -60,13 +61,51 @@
             return $respuesta;
         }
 
+        static function colocarArchiPublic($idArchivo, $idUsuario){
+            $conexion = Conectar::conexion();
+            $sql = "SELECT nombre, tipo, ruta FROM t_archivos WHERE id_archivo = '$idArchivo'";
+            $result = mysqli_query($conexion, $sql);
+            $datos = mysqli_fetch_array($result);
+            $nombreArchivo = $datos['nombre'];
+            $extension = $datos['tipo'];
+            $ruta = $datos['ruta'];
+            $sql_public = "INSERT INTO t_publico (id_usuario,
+                                            id_archivo, 
+                                            nombre, 
+                                            tipo, 
+                                            ruta) 
+                            VALUES (?, ?, ?, ?, ?)";
+            $query = $conexion->prepare($sql_public);
+            $query->bind_param("iisss", $idUsuario, 
+                                    $idArchivo,
+                                    $nombreArchivo, 
+                                    $extension, 
+                                    $ruta);
+            $respuesta = $query->execute();
+            $query->close();
+        }
+
         public function desPublicarArchivo($idArchivo){ //Quitar publico a un archivo
             $conexion = Conectar::conexion();
+            self::quitarArchiPublico($idArchivo);
             $sql = "UPDATE t_archivos SET publico = '0' WHERE id_archivo = '$idArchivo'";
             $query = $conexion->prepare($sql);
             $respuesta = $query->execute();
             $query->close();
             return $respuesta;
+        }
+
+        static function quitarArchiPublico($idArchivo){
+            $conexion = Conectar::conexion();
+            $sql = "SELECT id_publico FROM t_publico WHERE id_archivo = '$idArchivo'";
+            $result = mysqli_query($conexion, $sql);
+            $datos = mysqli_fetch_array($result);
+            $idPublico = $datos['id_publico'];
+            $sql_public = "DELETE FROM t_publico WHERE id_publico = '$idPublico";
+            $query = $conexion->prepare($sql_public);
+            $query->bind_param('i', $idPublico);
+            $respuesta = $query->execute();
+            $query->close();
         }
 
         public static function tipoArchivo($nombre, $extension) {

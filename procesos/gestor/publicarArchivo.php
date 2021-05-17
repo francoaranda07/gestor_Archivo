@@ -5,5 +5,4 @@
     $idArchivo = $_POST['idArchivo'];
 
     echo $Gestor->publicarArchivo($idArchivo);
-
 ?>
