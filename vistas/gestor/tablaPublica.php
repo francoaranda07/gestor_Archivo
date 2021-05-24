@@ -32,7 +32,7 @@
             <table class="table table-dark" id="tablaGestorDatatable">
                 <thead>
                     <tr style="text-align: center;">
-                        <th>Nombre</th>
+                        <th>Nombre del archivo</th>
                         <th>Tipo de Archivo</th>
                         <th>Descargar</th>
                         <th>Visualizar</th>

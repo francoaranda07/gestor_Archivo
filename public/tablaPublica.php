@@ -13,9 +13,8 @@
             <table class="table table-dark" id="tablaGestorDatatable">
                 <thead>
                     <tr style="text-align: center;">
-                        <th>Usuario</th>
-                        <th>Nombre del Archivo</th>
-                        <th>Tipo de Archivo</th>
+                        <th>Nombre del archivo</th>
+                        <th>Tipo de archivo</th>
                         <th>Visualizar</th>
                         <th>Descargar</th>
                     </tr>
@@ -28,15 +27,13 @@
                         $nombreArchivo = $datos['nombre'];
                         $idArchivo = $datos['id_archivo'];
                 ?>
-            
                     <tr style="text-align: center;">
                     
-                        <td><?php echo $datos['nombre']; ?></td>
                         <td><?php echo $datos['nombre']; ?></td>
                         <td><?php echo $datos['tipo']; ?></td>
                         <td>
                             <span class="btn btn-primary btn-sm" data-toggle="modal" data-target="#visualizarArchivo" onclick="obtenerArchivoPorId('<?php echo $idArchivo ?>')">
-                                            <span class="fas fa-eye"></span>
+                                    <span class="fas fa-eye"></span>
                             </span>
                         </td>
                         <td>

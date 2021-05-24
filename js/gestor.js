@@ -114,7 +114,7 @@ function quitararchivoPublico(idArchivo){ //quitar volver publico a un archivo
             respuesta = respuesta.trim();
             if (respuesta == 1) {
                 $('#tablaGestorArchivos').load("gestor/tablaGestor.php");
-            } else {
+            } else {     
                 Swal.fire({
                     title: 'Error',
                     text: 'Falló al Quitar',

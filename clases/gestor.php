@@ -37,6 +37,7 @@
             $query->bind_param('i', $idArchivo);
             $respuesta = $query->execute();
             $query->close();
+            self::quitarArchiPublico($idArchivo);
             return $respuesta;
         }
 
@@ -97,13 +98,9 @@
 
         static function quitarArchiPublico($idArchivo){
             $conexion = Conectar::conexion();
-            $sql = "SELECT id_publico FROM t_publico WHERE id_archivo = '$idArchivo'";
-            $result = mysqli_query($conexion, $sql);
-            $datos = mysqli_fetch_array($result);
-            $idPublico = $datos['id_publico'];
-            $sql_public = "DELETE FROM t_publico WHERE id_publico = '$idPublico";
-            $query = $conexion->prepare($sql_public);
-            $query->bind_param('i', $idPublico);
+            $sql = "DELETE FROM t_publico WHERE id_archivo = ?";
+            $query = $conexion->prepare($sql);
+            $query->bind_param('i', $idArchivo);
             $respuesta = $query->execute();
             $query->close();
         }

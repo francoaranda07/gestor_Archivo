@@ -19,7 +19,7 @@
                 return $respuesta;
             }
         }
-        public static function categoriaRepetida($categoria){
+        static function categoriaRepetida($categoria){
             $conexion = Conectar::conexion();
 
             $sql = "SELECT nombre FROM t_categorias WHERE nombre = '$categoria'";
