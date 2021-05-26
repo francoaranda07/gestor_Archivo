@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
     require_once "../../clases/categorias.php";
     $Categorias = new Categorias();
     $datos = array(

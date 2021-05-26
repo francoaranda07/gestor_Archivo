@@ -28,6 +28,9 @@
             <!-- Remind Passowrd -->
             <div id="formFooter">
                 <a class="underlineHover" href="register">Registrarse</a>
+                <div class="underlineHover">
+                    <a href="public/public.php">Público</a>
+                </div>
             </div>
 
         </div>

@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    
+    $idUsuario = $_SESSION['idUsuario'];
     if (isset($_SESSION['usuario'])){
         $nombre = $_SESSION['usuario'];
         include "../include/navegacion.php"; 
@@ -15,8 +15,7 @@
                     <hr>
                     <div class="row">
                         <div class="col-xl-4 col-md-6">
-                            <div class="card bg-primary text-white mb-4">
-                                <div class="card-body"><h3><i class="fas fa-file"></i> 23</h3>Archivos</div>
+                            <div id="CantidadArchivo" class="card bg-primary text-white mb-4">
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="gestor.php">Más detalles</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -24,8 +23,7 @@
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-6">
-                            <div class="card bg-warning text-white mb-4">
-                                <div class="card-body"><h3><i class="fas fa-clipboard"></i> 3</h3>Categorías</div>
+                            <div id="CantidadCategoria" class="card bg-warning text-white mb-4">
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="categorias.php">Más detalles</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -33,8 +31,7 @@
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-6">
-                            <div class="card bg-success text-white mb-4">
-                                <div class="card-body"><h3><i class="fas fa-globe"></i> 5</h3>Archivos públicos</div>
+                            <div id="ContArchiPublico" class="card bg-success text-white mb-4">
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="public.php">Más detalles</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -49,6 +46,16 @@
 </div>
 <?php 
     include "../include/footer.php";
+?>
+    <script src="../js/inicio.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){         
+            $("#CantidadArchivo", "#CantidadCategoria","#ContArchiPublico").load(VerCantArchivos(<?php echo $idUsuario ?>), VerCantCategoria(<?php echo $idUsuario ?>), VerCantArchiPublic(<?php echo $idUsuario ?>));
+        });
+
+    </script>
+<?php
+
     }else{
         header("location: ../login");
     }
