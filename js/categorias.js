@@ -13,8 +13,10 @@ function agregarCategoria() {
             data: "categoria=" + categoria,
             url: "../procesos/categorias/agregarCategoria.php",
             success: function(respuesta){
+                console.log(respuesta);
+
                 respuesta = respuesta.trim();
-                if (respuesta == 1) {
+                if ( respuesta == 1) {
                     $('#tablaCategorias').load("categorias/tablaCategoria.php");
                     $('#nombreCategoria').val("");
                     Swal.fire({

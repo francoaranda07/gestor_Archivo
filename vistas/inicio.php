@@ -15,7 +15,8 @@
                     <hr>
                     <div class="row">
                         <div class="col-xl-4 col-md-6">
-                            <div id="CantidadArchivo" class="card bg-primary text-white mb-4">
+                            <div id="" class="card bg-primary text-white mb-4">
+                                <div id="CantidadArchivo" class="card-body">Archivos</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="gestor.php">Más detalles</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -23,7 +24,8 @@
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-6">
-                            <div id="CantidadCategoria" class="card bg-warning text-white mb-4">
+                            <div  class="card bg-warning text-white mb-4">
+                                <div id="CantidadCategoria" class="card-body">Categorías</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="categorias.php">Más detalles</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -31,7 +33,8 @@
                             </div>
                         </div>
                         <div class="col-xl-4 col-md-6">
-                            <div id="ContArchiPublico" class="card bg-success text-white mb-4">
+                            <div  class="card bg-success text-white mb-4">
+                                <div id="ContArchiPublico" class="card-body">Archivos públicos</div> 
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="public.php">Más detalles</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>

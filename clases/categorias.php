@@ -26,7 +26,7 @@
             $result = mysqli_query($conexion, $sql);
             $datos = mysqli_fetch_array($result);
 
-            if ($datos['categoria'] != "" || $datos['categoria'] == $categoria) {
+            if ($datos['nombre'] != "" || $datos['nombre'] == $categoria) {
                 return 1;
             } else {
                 return 0;
