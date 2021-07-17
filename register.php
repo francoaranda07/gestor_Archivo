@@ -24,15 +24,15 @@
             <!-- Login Form -->
             <form id="frmRegistro" method="post" onsubmit="return agregarUsuarioNuevo()" autocomplete="off">
                 <label>Nombre</label>
-                <input type="text" id="nombre" class="form-control" name="nombre" required="">
+                <input type="text" id="nombre" class="form-control" name="nombre" >
                 <label for="">Fecha de Nacimiento</label>
-                <input type="text" id="fechaNacimiento" class="form-control" name="fechaNacimiento" required="">
+                <input type="text" id="fechaNacimiento" class="form-control" name="fechaNacimiento" >
                 <label>Email o Correo</label>
-                <input type="text" name="correo" id="correo" class="form-control" required="">
+                <input type="text" name="correo" id="correo" class="form-control" >
                 <label>Nombre de usuario</label>
-                <input type="text" name="usuario" id="usuario" class="form-control" required="">
+                <input type="text" name="usuario" id="usuario" class="form-control" >
                 <label> Password o Contraseña</label>
-                <input type="password" name="password" id="password" class="form-control" required="">  
+                <input type="password" name="password" id="password" class="form-control" >  
 
                 <div class="row mt-3">
                     <div class="col-sm-6 text-left">
@@ -66,12 +66,25 @@
         });
 
         function agregarUsuarioNuevo() {
-            $.ajax({
+            var nombre = $('#nombre').val();
+            var fechaNacimiento = $('#fechaNacimiento').val();
+            var correo = $('#correo').val();
+            var usuario = $('#usuario').val();
+            var password = $('#password').val();
+            
+            if (nombre == "" || fechaNacimiento == "" || correo == "" || usuario == "" || password == ""){
+                Swal.fire({
+                    type: 'warning',
+                    title: '¡Atención!',
+                    text: '¡No puede haber campos vacíos!'
+                })
+                console.log('error');
+            }else{
+                $.ajax({
                 method: "POST",
                 data: $('#frmRegistro').serialize(),
                 url: "procesos/usuario/registro/agregarUsuario.php",
                 success:function(respuesta){
-                    // console.log(respuesta)
                     respuesta = respuesta.trim();
                     if ( respuesta == 1 ) {
                         $("#frmRegistro")[0].reset();
@@ -100,9 +113,11 @@
                         });
                     }
                 }
-            });
+                });
+            }
             return false;
         }
+
     </script>
 </body>
 </html>
