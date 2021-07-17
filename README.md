@@ -12,6 +12,12 @@ _Proyecto Web con autenticación (Login y Registro), en el cual diferentes usuar
 * [SweetAlert2](https://sweetalert2.github.io/) 
 * [DataTables](https://datatables.net/) 
 
+---
+Linkedin: [Franco Aranda](https://linkedin.com/in/franco-aranda-054a911b6)
+Instagram: [Franco Aranda](https://instagram.com/frann_ea)
+Twitter: [Franco Aranda](https://twitter.com/Arandafranco04)
+
+
 
 
 
