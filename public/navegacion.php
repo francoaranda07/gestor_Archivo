@@ -13,7 +13,7 @@
     </head>
     <body class="sb-nav-fixed" style="background: #e9ecef;">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="../login.php">
                 <img src="../img/icono.png" alt="gestor" width="50px" class="ml-5">
             </a>
             
