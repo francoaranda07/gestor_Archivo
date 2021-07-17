@@ -13,18 +13,5 @@
             
         }
     }
-    // class Conectar{
-    //     public function conexion(){
-    //         $servidor = "localhost";
-    //         $usuario = "u321499243_frannubecilla";
-    //         $password = "Wb8/m:|J#Z7";
-    //         $base = "u321499243_nubecilla";
-
-    //         $conexion = mysqli_connect($servidor, $usuario, $password, $base);
-    //         $conexion->set_charset('utf8mb4');
-    //         return $conexion;
-            
-    //     }
-    // }
 
 ?>
